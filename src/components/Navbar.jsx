@@ -53,17 +53,17 @@ const Navbar = () => {
             onClick={handlerOpen}
             class='fa-solid fa-bars text-white text-3xl flex justify-end absolute right-0 top-0 px-5 py-2'
           ></i>
-          <li className='flex w-1/2 items-center gap-4 justify-start'>
+          <li className='flex w-1/2 items-center justify-start'>
             <i class='fa-solid fa-house'></i>
-            <span>Home</span>
+            <span className='ml-4'>Home</span>
           </li>
-          <li className='flex w-1/2 items-center gap-4 justify-start'>
+          <li className='flex w-1/2 items-center justify-start'>
             <i class='fa-solid fa-users'></i>
-            <span>Quienes Somos</span>
+            <span className='ml-4'>Quienes Somos</span>
           </li>
-          <li className='flex w-1/2 items-center gap-4 justify-start'>
+          <li className='flex w-1/2 items-center justify-start'>
             <i class='fa-sharp fa-solid fa-address-card'></i>
-            <span>Contacto</span>
+            <span className='ml-4'>Contacto</span>
           </li>
         </ul>
       </div>
