@@ -45,7 +45,7 @@ const Navbar = () => {
         ></i>
 
         <ul
-          className={`pt-20 flex flex-col items-center gap-10 h-screen absolute w-full top-0 text-white text-xl px-5 py-2 bg-black/50
+          className={`pt-20 flex flex-col items-center gap-20 h-screen absolute w-full top-0 text-white text-xl px-5 py-2 bg-black/50
              transition-all duration-500 
             ${open ? '-translate-x-0' : 'translate-x-full'}`}
         >
