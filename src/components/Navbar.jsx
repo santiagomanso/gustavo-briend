@@ -1,72 +1,69 @@
-import React from 'react'
 import { useState } from 'react'
 
 const Navbar = () => {
-  //variable
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false) //inicializamos un estado por defecto en false
 
   const handlerOpen = () => {
-    if (open === true) {
-      setOpen(false)
-    } else {
+    if (!open) {
       setOpen(true)
+    } else {
+      setOpen(false)
     }
   }
 
   return (
-    <nav className=' select-none'>
-      {/* pc navigation */}
-      <ul className='hidden lg:flex text-white  justify-between px-2 lg:px-20 pt-4'>
-        <div className='flex items-center gap-1'>
-          <i class='fa-solid fa-house'></i>
-          <li className='hover:cursor-pointer text-xl'>home</li>
+    <nav className='lg:text-xl text-white'>
+      <ul className='hidden lg:flex justify-between'>
+        <div>
+          <li>
+            <i className='fa-solid fa-house'></i>
+            <span>
+              <a href='/'>Cirkuk Gastrobar</a>
+            </span>
+          </li>
         </div>
-        <div className='flex gap-5'>
-          <div className='flex gap-1 items-center'>
-            <i class='fa-solid fa-users'></i>
-            <li className='hover:cursor-pointer text-xl'>Quienes somos</li>
-          </div>
-          <div className='flex gap-1 items-center'>
-            <i class='fa-sharp fa-solid fa-address-card'></i>
-            <li className='hover:cursor-pointer text-xl'>Contacto</li>
-          </div>
+        <div className='flex gap-10'>
+          <li>
+            <i className='fa-solid fa-rss'></i>
+            <a href='/blog'>blog</a>
+          </li>
+          <li>
+            <a href='/carta'>carta</a>
+          </li>
+          <li>
+            <a href='/about'>quienes somos</a>
+          </li>
+          <li>
+            <a href='/donde-estamos'>donde estamos</a>
+          </li>
+          <li>
+            <a href='/reservations'>reservas</a>
+          </li>
         </div>
       </ul>
 
-      {/* phone navigation */}
-
-      {/* boton visible fuera del navbar */}
-      <div className='lg:hidden'>
+      <i
+        onClick={handlerOpen}
+        className='fa-solid fa-bars text-2xl select-none'
+      ></i>
+      <aside
+        className={` ${
+          open ? '' : 'translate-x-full'
+        }  flex justify-end lg:hidden duration-1000`}
+      >
         <i
           onClick={handlerOpen}
-          class={` transition-all duration-300 ${
-            open ? 'opacity-0' : 'opacity-100'
-          } fa-solid fa-bars text-white text-3xl flex justify-end px-5 py-2`}
+          className='fa-solid fa-bars text-2xl select-none absolute'
         ></i>
-
-        <ul
-          className={`pt-20 flex flex-col items-center gap-20 h-screen absolute w-full top-0 text-white text-xl px-5 py-2 bg-black/50
-             transition-all duration-500 
-            ${open ? '-translate-x-0' : 'translate-x-full'}`}
-        >
-          <i
-            onClick={handlerOpen}
-            class='fa-solid fa-bars text-white text-3xl flex justify-end absolute right-0 top-0 px-5 py-2'
-          ></i>
-          <li className='flex w-1/2 items-center justify-start'>
-            <i class='fa-solid fa-house'></i>
-            <span className='ml-4'>Home</span>
-          </li>
-          <li className='flex w-1/2 items-center justify-start'>
-            <i class='fa-solid fa-users'></i>
-            <span className='ml-4'>Quienes Somos</span>
-          </li>
-          <li className='flex w-1/2 items-center justify-start'>
-            <i class='fa-sharp fa-solid fa-address-card'></i>
-            <span className='ml-4'>Contacto</span>
-          </li>
+        <ul className='bg-gray-300 h-screen flex flex-col gap-10 px-10 py-5'>
+          <li>Home</li>
+          <li>Blog</li>
+          <li>Carta</li>
+          <li>Quienes Somos</li>
+          <li>Donde estamos</li>
+          <li>Reservas</li>
         </ul>
-      </div>
+      </aside>
     </nav>
   )
 }
