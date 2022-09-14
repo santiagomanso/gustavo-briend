@@ -13,60 +13,42 @@ const Navbar = () => {
     }
   }
 
+  const [showSidebar, setShowSidebar] = useState(false)
+
   return (
-    <nav className=' select-none'>
-      {/* pc navigation */}
-      <ul className='hidden lg:flex text-white  justify-between px-2 lg:px-20 pt-4'>
-        <div className='flex items-center gap-1'>
-          <i class='fa-solid fa-house'></i>
-          <li className='hover:cursor-pointer text-xl'>home</li>
-        </div>
-        <div className='flex gap-5'>
-          <div className='flex gap-1 items-center'>
-            <i class='fa-solid fa-users'></i>
-            <li className='hover:cursor-pointer text-xl'>Quienes somos</li>
-          </div>
-          <div className='flex gap-1 items-center'>
-            <i class='fa-sharp fa-solid fa-address-card'></i>
-            <li className='hover:cursor-pointer text-xl'>Contacto</li>
-          </div>
-        </div>
-      </ul>
-
-      {/* phone navigation */}
-
-      {/* boton visible fuera del navbar */}
-      <div className='lg:hidden'>
-        <ul
-          className={`pt-20 flex flex-col items-center gap-20 h-screen  w-full top-0 text-white text-xl px-5 py-2 bg-black/50
-             transition-all duration-500 
-            ${open ? '-translate-x-0' : 'translate-x-full'}`}
+    <div className='md:hidden  select-none'>
+      {showSidebar ? (
+        <button
+          className='flex text-4xl text-white items-center cursor-pointer fixed right-10 top-6 z-50'
+          onClick={() => setShowSidebar(!showSidebar)}
         >
-          <i
-            onClick={handlerOpen}
-            class='fa-solid fa-bars text-white text-3xl flex justify-end absolute inset-0 px-5 py-2'
-          ></i>
-          <li className='flex w-1/2 items-center justify-start'>
-            <i class='fa-solid fa-house'></i>
-            <span className='ml-4'>Home</span>
-          </li>
-          <li className='flex w-1/2 items-center justify-start'>
-            <i class='fa-solid fa-users'></i>
-            <span className='ml-4'>Quienes Somos</span>
-          </li>
-          <li className='flex w-1/2 items-center justify-start'>
-            <i class='fa-sharp fa-solid fa-address-card'></i>
-            <span className='ml-4'>Contacto</span>
-          </li>
-        </ul>
-        <i
-          onClick={handlerOpen}
-          class={`absolute inset-0 transition-all duration-300 ${
-            open ? 'opacity-0' : 'opacity-100'
-          } fa-solid fa-bars text-white text-3xl flex justify-end px-5 py-2`}
-        ></i>
+          x
+        </button>
+      ) : (
+        <svg
+          onClick={() => setShowSidebar(!showSidebar)}
+          className='fixed  z-30 flex items-center cursor-pointer right-10 top-6'
+          fill='#fff'
+          viewBox='0 0 100 80'
+          width='40'
+          height='40'
+        >
+          <rect width='100' height='10'></rect>
+          <rect y='30' width='100' height='10'></rect>
+          <rect y='60' width='100' height='10'></rect>
+        </svg>
+      )}
+
+      <div
+        className={`top-0 right-0 w-[100vw] bg-black/50  p-10 pl-20
+                  text-white fixed h-full z-40  ease-in-out duration-300
+        ${showSidebar ? 'translate-x-0 ' : 'translate-x-full'}`}
+      >
+        <h3 className='mt-20 text-4xl font-semibold text-white'>
+          I am a sidebar
+        </h3>
       </div>
-    </nav>
+    </div>
   )
 }
 

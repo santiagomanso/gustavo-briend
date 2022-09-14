@@ -5,9 +5,7 @@
 @layer base{ 
   body {
     margin: 0;
-  }
-  .app{
     background: rgb(29,45,61);
-background: linear-gradient(121deg, rgba(29,45,61,1) 0%, rgba(17,27,38,1) 21%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(121deg, rgba(29,45,61,1) 0%, rgba(17,27,38,1) 21%, rgba(0,0,0,1) 100%);
   }
 }

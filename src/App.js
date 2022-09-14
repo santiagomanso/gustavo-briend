@@ -4,7 +4,7 @@ import gustavoProfile from './assets/whatsappProfile.png'
 
 function App() {
   return (
-    <div className='app h-screen overflow-hidden'>
+    <div className='flex flex-col items-center justify-center min-h-screen py-2'>
       <Navbar />
       <FloatingWhatsApp
         phoneNumber='+5493794508606'
