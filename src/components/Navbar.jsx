@@ -38,22 +38,19 @@ const Navbar = () => {
         )}
 
         <div
-          className={`top-0 right-0 w-[100vw] bg-black/80
+          className={`top-0 right-0 w-[100vw] bg-black/90
                   text-white fixed h-full z-40  ease-in-out duration-300
                   flex flex-col justify-start items-center
                   pt-20 gap-20
         ${showSidebar ? 'translate-x-0 ' : 'translate-x-full'}`}
         >
           <div className='flex gap-4 w-1/3'>
-            <i class='fa-solid fa-house text-2xl'></i>
             <span className='text-2xl'>Inicio</span>
           </div>
           <div className='flex gap-4 w-1/3'>
-            <i class='fa-solid fa-users text-2xl'></i>
             <span className='text-2xl'>Staff</span>
           </div>
           <div className='flex gap-4 w-1/3'>
-            <i class='fa-solid fa-id-card text-2xl'></i>
             <span className='text-2xl'>Contacto</span>
           </div>
         </div>
@@ -67,10 +64,10 @@ const Navbar = () => {
             Gustavo <span className='text-action font-semibold'>Briend</span>
           </h1>
         </div>
-        <div className='flex gap-20 text-xl items-center'>
+        <div className='flex gap-14 text-xl items-center'>
           <div className='flex items-center gap-2 group'>
             <i class='fa-solid fa-users text-2xl group-hover:rotate-[17deg] scale-0 group-hover:scale-[1.15] duration-500 group-hover:text-green-700 group-hover:-translate-x-1'></i>
-            <span>Quienes Somos</span>
+            <span>Staff</span>
           </div>
           <div className='flex items-center gap-2 group'>
             <i class='fa-solid fa-gavel text-2xl group-hover:rotate-[17deg] scale-0 group-hover:scale-[1.15] duration-500 group-hover:text-amber-800 group-hover:-translate-x-1'></i>
